@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0-preview1.19506.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0-preview1.19506.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.0-preview1.19506.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0-preview1-19509-03" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Around.Architectures.Core.Businesses\Around.Architectures.Core.Businesses.csproj" />
+    <ProjectReference Include="..\Around.Architectures.Core.Interfaces.Models\Around.Architectures.Core.Interfaces.Models.csproj" />
+    <ProjectReference Include="..\Around.Architectures.Core.Models\Around.Architectures.Core.Models.csproj" />
+    <ProjectReference Include="..\Around.Architectures.Core.Services\Around.Architectures.Core.Services.csproj" />
+    <ProjectReference Include="..\Around.Architectures.Core.Web\Around.Architectures.Core.Web.csproj" />
+    <ProjectReference Include="..\Around.Architectures.Interfaces\Around.Architectures.Core.Interfaces.csproj" />
+  </ItemGroup>
+
+
+
+</Project>

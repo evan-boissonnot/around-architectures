@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Around.Architectures.Core.Interfaces.Models\Around.Architectures.Core.Interfaces.Models.csproj" />
+    <ProjectReference Include="..\Around.Architectures.Core.Models\Around.Architectures.Core.Models.csproj" />
+  </ItemGroup>
+
+</Project>
