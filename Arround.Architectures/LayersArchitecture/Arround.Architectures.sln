@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Around.Architectures.Core.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Around.Architectures.Core.Data", "Around.Architectures.Core.Data\Around.Architectures.Core.Data.csproj", "{DBD38BB3-FFDE-4B0F-99B4-A36A4C1782DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Around.Architectures.Core.Dals", "Around.Architectures.Core.Dals\Around.Architectures.Core.Dals.csproj", "{798E3A2E-5EA4-4A84-8555-593F7A33C3BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{DBD38BB3-FFDE-4B0F-99B4-A36A4C1782DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBD38BB3-FFDE-4B0F-99B4-A36A4C1782DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBD38BB3-FFDE-4B0F-99B4-A36A4C1782DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{798E3A2E-5EA4-4A84-8555-593F7A33C3BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{798E3A2E-5EA4-4A84-8555-593F7A33C3BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{798E3A2E-5EA4-4A84-8555-593F7A33C3BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{798E3A2E-5EA4-4A84-8555-593F7A33C3BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +106,7 @@ Global
 		{0823A36C-7CEB-4EA0-83E7-A18F35331A56} = {E6811801-4925-46FC-9A40-66557DA8E223}
 		{53BDF8F0-7999-4317-A6F8-1E89F937F7B7} = {E6811801-4925-46FC-9A40-66557DA8E223}
 		{DBD38BB3-FFDE-4B0F-99B4-A36A4C1782DB} = {E6811801-4925-46FC-9A40-66557DA8E223}
+		{798E3A2E-5EA4-4A84-8555-593F7A33C3BD} = {E6811801-4925-46FC-9A40-66557DA8E223}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BE098790-9E07-461F-93F8-BB7D23C997E4}
