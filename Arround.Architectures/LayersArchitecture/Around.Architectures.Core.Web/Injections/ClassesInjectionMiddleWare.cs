@@ -20,8 +20,8 @@ namespace Microsoft.Extensions.DependencyInjection
                 options.UseSqlServer(configuration.GetConnectionString("DefaultDbContext"));
             });
 
-            services.AddTransient<IOrderDataLayer, OrderDal>();
-            services.AddTransient<IOrderBusiness, OrderBusiness>();
+            services.AddScoped<IOrderDataLayer, OrderDal>();
+            services.AddScoped<IOrderBusiness, OrderBusiness>();
 
             return services;
         }
