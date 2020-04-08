@@ -25,7 +25,7 @@ namespace Around.Architectures.Core.Dals
 
         public IList<Order> GetList(IFilter<Order> filter)
         {
-            return this._context.Orders.ToList();
+            return this._context.Orders.Where(filter.Query()).ToList();
         }
     }
 }

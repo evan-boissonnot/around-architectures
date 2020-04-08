@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Around.Architectures.Core.Businesses.TransactionScripts;
+using Around.Architectures.Core.Filters;
 using Around.Architectures.Core.Interfaces.Businesses;
 using Around.Architectures.Core.Models;
 using Around.Architectures.Core.Web.Controllers;
@@ -36,7 +37,7 @@ namespace Arround.Architectures.Web.UI.Controllers
         {
             OrderListViewModel viewModel = new OrderListViewModel();
 
-            viewModel.Items = this._orderBusiness.GetList(null);
+            viewModel.Items = this._orderBusiness.GetList(new OrderListFilter(0));
 
             return View(viewModel);
         }

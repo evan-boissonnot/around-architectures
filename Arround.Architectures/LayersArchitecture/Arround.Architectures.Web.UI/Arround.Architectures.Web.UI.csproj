@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Around.Architectures.Core.Businesses\Around.Architectures.Core.Businesses.csproj" />
     <ProjectReference Include="..\Around.Architectures.Core.Dals\Around.Architectures.Core.Dals.csproj" />
+    <ProjectReference Include="..\Around.Architectures.Core.Filters\Around.Architectures.Core.Filters.csproj" />
     <ProjectReference Include="..\Around.Architectures.Core.Interfaces.Models\Around.Architectures.Core.Interfaces.Models.csproj" />
     <ProjectReference Include="..\Around.Architectures.Core.Models\Around.Architectures.Core.Models.csproj" />
     <ProjectReference Include="..\Around.Architectures.Core.Services\Around.Architectures.Core.Services.csproj" />

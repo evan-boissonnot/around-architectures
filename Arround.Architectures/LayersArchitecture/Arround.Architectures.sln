@@ -25,15 +25,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Around.Architectures.Core.M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Around.Architectures.Core.Services", "Around.Architectures.Core.Services\Around.Architectures.Core.Services.csproj", "{A41FDB41-5E7F-4492-9EE3-35D732841B72}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Around.Architectures.Core.Interfaces.Models", "Around.Architectures.Core.Interfaces.Models\Around.Architectures.Core.Interfaces.Models.csproj", "{7E508C78-3746-47D7-BEE7-5533EAA0D314}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Around.Architectures.Core.Interfaces.Models", "Around.Architectures.Core.Interfaces.Models\Around.Architectures.Core.Interfaces.Models.csproj", "{7E508C78-3746-47D7-BEE7-5533EAA0D314}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interfaces", "Interfaces", "{0823A36C-7CEB-4EA0-83E7-A18F35331A56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Around.Architectures.Core.Web", "Around.Architectures.Core.Web\Around.Architectures.Core.Web.csproj", "{53BDF8F0-7999-4317-A6F8-1E89F937F7B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Around.Architectures.Core.Web", "Around.Architectures.Core.Web\Around.Architectures.Core.Web.csproj", "{53BDF8F0-7999-4317-A6F8-1E89F937F7B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Around.Architectures.Core.Data", "Around.Architectures.Core.Data\Around.Architectures.Core.Data.csproj", "{DBD38BB3-FFDE-4B0F-99B4-A36A4C1782DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Around.Architectures.Core.Data", "Around.Architectures.Core.Data\Around.Architectures.Core.Data.csproj", "{DBD38BB3-FFDE-4B0F-99B4-A36A4C1782DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Around.Architectures.Core.Dals", "Around.Architectures.Core.Dals\Around.Architectures.Core.Dals.csproj", "{798E3A2E-5EA4-4A84-8555-593F7A33C3BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Around.Architectures.Core.Dals", "Around.Architectures.Core.Dals\Around.Architectures.Core.Dals.csproj", "{798E3A2E-5EA4-4A84-8555-593F7A33C3BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Around.Architectures.Core.Filters", "Around.Architectures.Core.Filters\Around.Architectures.Core.Filters.csproj", "{0F0775CA-044C-439C-BEBF-9D5BA8CED321}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -89,6 +91,10 @@ Global
 		{798E3A2E-5EA4-4A84-8555-593F7A33C3BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{798E3A2E-5EA4-4A84-8555-593F7A33C3BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{798E3A2E-5EA4-4A84-8555-593F7A33C3BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0775CA-044C-439C-BEBF-9D5BA8CED321}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0775CA-044C-439C-BEBF-9D5BA8CED321}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0775CA-044C-439C-BEBF-9D5BA8CED321}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0775CA-044C-439C-BEBF-9D5BA8CED321}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +113,7 @@ Global
 		{53BDF8F0-7999-4317-A6F8-1E89F937F7B7} = {E6811801-4925-46FC-9A40-66557DA8E223}
 		{DBD38BB3-FFDE-4B0F-99B4-A36A4C1782DB} = {E6811801-4925-46FC-9A40-66557DA8E223}
 		{798E3A2E-5EA4-4A84-8555-593F7A33C3BD} = {E6811801-4925-46FC-9A40-66557DA8E223}
+		{0F0775CA-044C-439C-BEBF-9D5BA8CED321} = {E6811801-4925-46FC-9A40-66557DA8E223}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BE098790-9E07-461F-93F8-BB7D23C997E4}
