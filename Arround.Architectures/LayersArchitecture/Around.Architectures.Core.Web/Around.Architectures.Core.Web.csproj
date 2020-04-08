@@ -1,10 +1,17 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Around.Architectures.Core.Businesses\Around.Architectures.Core.Businesses.csproj" />
+    <ProjectReference Include="..\Around.Architectures.Core.Dals\Around.Architectures.Core.Dals.csproj" />
     <ProjectReference Include="..\Around.Architectures.Interfaces\Around.Architectures.Core.Interfaces.csproj" />
   </ItemGroup>
 

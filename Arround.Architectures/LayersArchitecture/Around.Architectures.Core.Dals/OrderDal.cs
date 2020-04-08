@@ -1,11 +1,14 @@
 ﻿using Around.Architectures.Core.Data;
-using Around.Architectures.Core.Interfaces.Dals;
+using Around.Architectures.Core.Interfaces.Data.Dals;
+using Around.Architectures.Core.Interfaces.Filters;
 using Around.Architectures.Core.Models;
 using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Around.Architectures.Core.Dals
 {
-    public class OrderDal : IDataAccessLayer<Order>
+    public class OrderDal : IOrderDataLayer
     {
         private DefaultContext _context = null;
 
@@ -14,10 +17,15 @@ namespace Around.Architectures.Core.Dals
             this._context = context;
         }
 
-        public void Add(Order order)
+        public void AddOne(Order item)
         {
-            this._context.Orders.Add(order);
+            this._context.Orders.Add(item);
             this._context.SaveChanges();
+        }
+
+        public IList<Order> GetList(IFilter<Order> filter)
+        {
+            return this._context.Orders.ToList();
         }
     }
 }

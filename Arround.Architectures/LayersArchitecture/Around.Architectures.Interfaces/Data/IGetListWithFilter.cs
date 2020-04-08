@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Around.Architectures.Core.Interfaces.Businesses
+namespace Around.Architectures.Core.Interfaces.Data
 {
-    public interface IBusiness<T> where T: IModel
+    public interface IGetListWithFilter<T> where T: IModel
     {
         IList<T> GetList(IFilter<T> filter);
     }
