@@ -12,7 +12,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Around.Architectures.Core.Businesses\Around.Architectures.Core.Businesses.csproj" />
     <ProjectReference Include="..\Around.Architectures.Core.Dals\Around.Architectures.Core.Dals.csproj" />
+    <ProjectReference Include="..\Around.Architectures.Core.Filters\Around.Architectures.Core.Filters.csproj" />
     <ProjectReference Include="..\Around.Architectures.Interfaces\Around.Architectures.Core.Interfaces.csproj" />
+    <ProjectReference Include="..\Boissonnot.Framework.Core.Collections\Boissonnot.Framework.Core.Collections.csproj" />
   </ItemGroup>
 
 </Project>

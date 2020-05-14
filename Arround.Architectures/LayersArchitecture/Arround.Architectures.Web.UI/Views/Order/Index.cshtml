@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Around.Architectures.Core.Models.Order>
+﻿@namespace Around.Architectures.Core.Web.ViewModels
+@model OrderListViewModel
 
 @{
     ViewData["Title"] = "Index";
@@ -13,16 +14,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                Id
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Amount)
+                Montant
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+@foreach (var item in Model.Items) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Id)

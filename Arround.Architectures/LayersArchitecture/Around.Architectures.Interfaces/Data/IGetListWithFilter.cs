@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Around.Architectures.Core.Interfaces.Data
 {
-    public interface IGetListWithFilter<T> where T: IModel
+    public interface IGetListWithFilter<T> where T: class, IModel
     {
         IList<T> GetList(IFilter<T> filter);
     }

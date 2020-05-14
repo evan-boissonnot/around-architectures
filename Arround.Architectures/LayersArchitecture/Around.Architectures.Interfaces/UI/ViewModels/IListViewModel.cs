@@ -5,8 +5,7 @@ using System.Text;
 
 namespace Around.Architectures.Core.Interfaces.UI.ViewModels
 {
-    public interface IListViewModel<T, U> where T: IList<U>
-                                          where U: IModel
+    public interface IListViewModel<U> where U: IModel
     {
         IList<U> Items { get; set; }
     }

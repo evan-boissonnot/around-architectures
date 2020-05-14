@@ -27,5 +27,7 @@ namespace Around.Architectures.Core.Dals
         {
             return this._context.Orders.Where(filter.Query()).ToList();
         }
+
+
     }
 }

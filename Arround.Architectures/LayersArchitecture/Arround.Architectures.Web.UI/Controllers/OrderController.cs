@@ -14,8 +14,6 @@ namespace Arround.Architectures.Web.UI.Controllers
 {
     public class OrderController : BaseController<Order>
     {
-        private IOrderBusiness _orderBusiness;
-
         public OrderController(IOrderBusiness orderBusiness)
         {
             this._orderBusiness = orderBusiness;
@@ -35,9 +33,7 @@ namespace Arround.Architectures.Web.UI.Controllers
 
         public IActionResult Index()
         {
-            OrderListViewModel viewModel = new OrderListViewModel();
-
-            viewModel.Items = this._orderBusiness.GetList(new OrderListFilter(0));
+            
 
             return View(viewModel);
         }
