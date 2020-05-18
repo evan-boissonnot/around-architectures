@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Around.Architectures.Core.Web.Presentation;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -17,11 +18,15 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             services.AddDbContext<DefaultContext>(options =>
             {
-                options.UseSqlServer(configuration.GetConnectionString("DefaultDbContext"));
+                options.UseSqlServer(configuration.GetConnectionString("DefaultDbContext"), sqlOptions =>
+                {
+                    sqlOptions.UseRowNumberForPaging(true);
+                });
             });
 
             services.AddScoped<IOrderDataLayer, OrderDal>();
             services.AddScoped<IOrderBusiness, OrderBusiness>();
+            services.AddScoped<OrderPresentation, OrderPresentation>();
 
             return services;
         }

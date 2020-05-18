@@ -7,39 +7,42 @@ using Around.Architectures.Core.Filters;
 using Around.Architectures.Core.Interfaces.Businesses;
 using Around.Architectures.Core.Models;
 using Around.Architectures.Core.Web.Controllers;
+using Around.Architectures.Core.Web.Presentation;
 using Around.Architectures.Core.Web.ViewModels;
+using Boissonnot.Framework.Core.Collections.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Razor.Language;
 
 namespace Arround.Architectures.Web.UI.Controllers
 {
     public class OrderController : BaseController<Order>
     {
-        private IOrderBusiness _orderBusiness;
+        #region Fields
+        private OrderPresentation _orderPresentation = null;
+        #endregion
 
-        public OrderController(IOrderBusiness orderBusiness)
+        public OrderController(OrderPresentation orderPresentation)
         {
-            this._orderBusiness = orderBusiness;
+            this._orderPresentation = orderPresentation;
         }
 
         [HttpPost]
         public IActionResult Create(Order order)
         {
-            this._orderBusiness.SaveOne(order);
-            return this.View();
+            return View();
         }
 
         public IActionResult Create()
         {
-            return this.View();
+            return View();
         }
 
         public IActionResult Index()
         {
-            OrderListViewModel viewModel = new OrderListViewModel();
+            // https://www.strathweb.com/2018/01/easy-way-to-create-a-c-lambda-expression-from-a-string-with-roslyn/
+            var viewModel = this._orderPresentation.GetList(new OrderListFilter(0), new Pagination(), new SortItem<Order>());
 
-            viewModel.Items = this._orderBusiness.GetList(new OrderListFilter(0));
-
-            return this.View(viewModel);
+            return View(viewModel);
         }
     }
 }

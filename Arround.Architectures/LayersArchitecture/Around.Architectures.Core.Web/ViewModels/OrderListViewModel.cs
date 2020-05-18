@@ -6,8 +6,20 @@ using System.Text;
 
 namespace Around.Architectures.Core.Web.ViewModels
 {
-    public class OrderListViewModel : IListViewModel<List<Order>, Order>
+    /// <summary>
+    /// ViewModel from a list of order
+    /// </summary>
+    public class OrderListViewModel : IListViewModel<Order>
     {
+        #region Constructors
+        public OrderListViewModel(IList<Order> items)
+        {
+            this.Items = items;
+        }
+        #endregion
+
+        #region Properties
         public IList<Order> Items { get; set; }
+        #endregion
     }
 }

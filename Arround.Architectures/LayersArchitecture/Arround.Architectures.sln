@@ -35,7 +35,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Around.Architectures.Core.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Around.Architectures.Core.Dals", "Around.Architectures.Core.Dals\Around.Architectures.Core.Dals.csproj", "{798E3A2E-5EA4-4A84-8555-593F7A33C3BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Around.Architectures.Core.Filters", "Around.Architectures.Core.Filters\Around.Architectures.Core.Filters.csproj", "{0F0775CA-044C-439C-BEBF-9D5BA8CED321}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Around.Architectures.Core.Filters", "Around.Architectures.Core.Filters\Around.Architectures.Core.Filters.csproj", "{0F0775CA-044C-439C-BEBF-9D5BA8CED321}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frameworks", "Frameworks", "{8F3CC01E-ABE5-4708-8FC1-AB8F479C8968}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Boissonnot.Framework.Core.Collections", "Boissonnot.Framework.Core.Collections\Boissonnot.Framework.Core.Collections.csproj", "{EBBFC14D-7EF3-4224-93AF-860C66BBCF37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +99,10 @@ Global
 		{0F0775CA-044C-439C-BEBF-9D5BA8CED321}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F0775CA-044C-439C-BEBF-9D5BA8CED321}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F0775CA-044C-439C-BEBF-9D5BA8CED321}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBBFC14D-7EF3-4224-93AF-860C66BBCF37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBBFC14D-7EF3-4224-93AF-860C66BBCF37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBBFC14D-7EF3-4224-93AF-860C66BBCF37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBBFC14D-7EF3-4224-93AF-860C66BBCF37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +122,8 @@ Global
 		{DBD38BB3-FFDE-4B0F-99B4-A36A4C1782DB} = {E6811801-4925-46FC-9A40-66557DA8E223}
 		{798E3A2E-5EA4-4A84-8555-593F7A33C3BD} = {E6811801-4925-46FC-9A40-66557DA8E223}
 		{0F0775CA-044C-439C-BEBF-9D5BA8CED321} = {E6811801-4925-46FC-9A40-66557DA8E223}
+		{8F3CC01E-ABE5-4708-8FC1-AB8F479C8968} = {E6811801-4925-46FC-9A40-66557DA8E223}
+		{EBBFC14D-7EF3-4224-93AF-860C66BBCF37} = {8F3CC01E-ABE5-4708-8FC1-AB8F479C8968}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BE098790-9E07-461F-93F8-BB7D23C997E4}
