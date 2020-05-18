@@ -38,7 +38,8 @@ namespace Arround.Architectures.Web.UI.Controllers
         }
 
         public IActionResult Index()
-        {            
+        {
+            // https://www.strathweb.com/2018/01/easy-way-to-create-a-c-lambda-expression-from-a-string-with-roslyn/
             var viewModel = this._orderPresentation.GetList(new OrderListFilter(0), new Pagination(), new SortItem<Order>());
 
             return View(viewModel);
