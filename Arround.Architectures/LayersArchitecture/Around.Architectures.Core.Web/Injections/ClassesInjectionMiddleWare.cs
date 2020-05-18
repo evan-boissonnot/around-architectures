@@ -20,7 +20,6 @@ namespace Microsoft.Extensions.DependencyInjection
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultDbContext"), sqlOptions =>
                 {
-                    sqlOptions.UseRowNumberForPaging(true);
                 });
             });
 

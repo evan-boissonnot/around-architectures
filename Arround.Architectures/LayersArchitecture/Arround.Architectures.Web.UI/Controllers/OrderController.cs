@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Around.Architectures.Core.Businesses.TransactionScripts;
 using Around.Architectures.Core.Filters;
@@ -29,20 +30,31 @@ namespace Arround.Architectures.Web.UI.Controllers
         [HttpPost]
         public IActionResult Create(Order order)
         {
-            return View();
+            return this.View();
         }
 
         public IActionResult Create()
         {
-            return View();
+            return this.View();
         }
 
         public IActionResult Index()
         {
             // https://www.strathweb.com/2018/01/easy-way-to-create-a-c-lambda-expression-from-a-string-with-roslyn/
-            var viewModel = this._orderPresentation.GetList(new OrderListFilter(0), new Pagination(), new SortItem<Order>());
 
-            return View(viewModel);
+            var orderByList = new List<Expression<Func<Order, object>>>()
+            {
+                x => x.Amount,
+                x => x.Id
+            };
+            SortItem<Order> sortItem = new SortItem<Order>()
+            {
+                OrderBys = orderByList.ToArray()
+            };
+
+            var viewModel = this._orderPresentation.GetList(new OrderListFilter(0), new Pagination() { PageNumber = 1, PageSize = 2 }, sortItem);
+
+            return this.View(viewModel);
         }
     }
 }

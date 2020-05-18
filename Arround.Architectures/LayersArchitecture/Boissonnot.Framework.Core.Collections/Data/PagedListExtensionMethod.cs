@@ -17,7 +17,12 @@ namespace Boissonnot.Framework.Core.Collections.Data
         public static PagedList<T> ToPagedList<T>(this IQueryable<T> source, Pagination pagination)
         {
             var count = source.Count();
-            var items = source.Skip((pagination.PageNumber - 1) * pagination.PageSize).Take(pagination.PageSize).ToList();
+            List<T> items = new List<T>();
+
+            if (count > 0)
+            {
+                items = source.Skip((pagination.PageNumber - 1) * pagination.PageSize).Take(pagination.PageSize).ToList();
+            }
 
             return new PagedList<T>(items, count, pagination.PageNumber, pagination.PageSize);
         }

@@ -39,11 +39,13 @@ namespace Boissonnot.Framework.Core.Collections.Data
             {
                 IOrderedQueryable<T> query = null;
 
+                bool isAlreadyOrdered = this.IsAlreadyOrder;
                 foreach (var sort in this._orderBys)
                 {
-                    if (!this.IsAlreadyOrder)
+                    if (! isAlreadyOrdered)
                     {
                         query = this.Source.OrderBy(sort);
+                        isAlreadyOrdered = true;
                     }
                     else
                     {
@@ -55,6 +57,8 @@ namespace Boissonnot.Framework.Core.Collections.Data
 
             return source;
         }
+
+
         #endregion
 
         #region Properties
