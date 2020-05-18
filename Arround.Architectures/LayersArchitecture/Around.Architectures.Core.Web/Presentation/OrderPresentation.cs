@@ -38,6 +38,16 @@ namespace Around.Architectures.Core.Web.Presentation
 
             return new OrderListViewModel(pageList.ToList());
         }
+
+        public IListViewModel<Order> GeList(IFilter<Order> filters, Pagination pagination, string orderQuery)
+        {
+            var list = this._business.GetList(filters);
+            list = list.OrderBy(orderQuery);
+
+            var pageList = list.ToPagedList(pagination);
+
+            return new OrderListViewModel(pageList.ToList());
+        }
         #endregion
     }
 }
