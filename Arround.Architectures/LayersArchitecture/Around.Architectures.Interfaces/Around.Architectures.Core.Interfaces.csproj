@@ -7,6 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Around.Architectures.Core.Interfaces.Models\Around.Architectures.Core.Interfaces.Models.csproj" />
     <ProjectReference Include="..\Around.Architectures.Core.Models\Around.Architectures.Core.Models.csproj" />
+    <ProjectReference Include="..\Boissonnot.Framework.Core.Collections\Boissonnot.Framework.Core.Collections.csproj" />
   </ItemGroup>
 
 </Project>

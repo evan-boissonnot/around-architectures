@@ -22,8 +22,6 @@ namespace Around.Architectures.Core.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-
             modelBuilder.ApplyConfiguration(new EntityConfigurations.CustomerEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new EntityConfigurations.ProductEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new EntityConfigurations.RowEntityTypeConfiguration());

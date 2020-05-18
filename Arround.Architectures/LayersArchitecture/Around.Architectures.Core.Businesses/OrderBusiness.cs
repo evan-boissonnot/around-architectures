@@ -5,6 +5,7 @@ using Around.Architectures.Core.Interfaces.Filters;
 using Around.Architectures.Core.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Around.Architectures.Core.Businesses
@@ -18,7 +19,7 @@ namespace Around.Architectures.Core.Businesses
             this._layer = layer;
         }
 
-        public IList<Order> GetList(IFilter<Order> filter)
+        public IQueryable<Order> GetList(IFilter<Order> filter)
         {
             return this._layer.GetList(filter);
         }

@@ -28,14 +28,15 @@ namespace Around.Architectures.Core.Web.Presentation
         #endregion
 
         #region Public methods
-        public IListViewModel<Order> GetList(IFilter<Order> filters, params Expression<Func<Order, object>>[] orderBys)
+        public IListViewModel<Order> GetList(IFilter<Order> filters, Pagination pagination, SortItem<Order> sortItem)
         {
             var list = this._business.GetList(filters);
-            var sort = new GenericSorter<Order>(list.AsQueryable(), orderBys);
+            var sort = new GenericSorter<Order>(list.AsQueryable(), sortItem.OrderBys);
             var query = sort.Sort();
-            
 
-            return new OrderListViewModel(query.ToList());
+            var pageList = query.ToPagedList(pagination);
+
+            return new OrderListViewModel(pageList.ToList());
         }
         #endregion
     }

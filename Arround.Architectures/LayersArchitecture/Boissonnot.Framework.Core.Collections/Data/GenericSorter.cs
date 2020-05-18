@@ -31,16 +31,29 @@ namespace Boissonnot.Framework.Core.Collections.Data
         #endregion
 
         #region Public methods
-        public IOrderedQueryable<T> Sort()
+        public IQueryable<T> Sort()
         {
-            IOrderedQueryable<T> query = null;
+            IQueryable<T> source = this.Source;
 
-            foreach(var sort in this._orderBys)
+            if (this._orderBys != null)
             {
-                query = ((IOrderedQueryable<T>)this.Source).ThenBy(sort);
+                IOrderedQueryable<T> query = null;
+
+                foreach (var sort in this._orderBys)
+                {
+                    if (!this.IsAlreadyOrder)
+                    {
+                        query = this.Source.OrderBy(sort);
+                    }
+                    else
+                    {
+                        query = query.ThenBy(sort);
+                    }
+                }
+                source = query;
             }
 
-            return query;
+            return source;
         }
         #endregion
 
