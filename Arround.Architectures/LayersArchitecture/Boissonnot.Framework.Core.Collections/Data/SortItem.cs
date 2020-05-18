@@ -5,19 +5,17 @@ using System.Text;
 
 namespace Boissonnot.Framework.Core.Collections.Data
 {
-    public enum SortType
-    {
-        Asc,
-        Desc
-    }
-
+    /// <summary>
+    /// Generic sort item with expression list
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class SortItem<T>
     {
-        public SortType SortType { get; set; }
-
+        #region Properties
         /// <summary>
-        /// 
+        /// Order by list expression lambdas
         /// </summary>
         public Expression<Func<T, object>>[] OrderBys { get; set; }
+        #endregion
     }
 }

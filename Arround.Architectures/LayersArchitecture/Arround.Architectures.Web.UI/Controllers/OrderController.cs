@@ -38,10 +38,8 @@ namespace Arround.Architectures.Web.UI.Controllers
             return this.View();
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string amount)
         {
-            // https://www.strathweb.com/2018/01/easy-way-to-create-a-c-lambda-expression-from-a-string-with-roslyn/
-
             var orderByList = new List<Expression<Func<Order, object>>>()
             {
                 x => x.Amount,
