@@ -12,28 +12,31 @@ namespace Boissonnot.Framework.Core.Collections.Data
         #region Public methods
         public IEnumerable<OrderByInfo> Parse(string content)
         {
-            string[] orderListValues = content.Split(',');
-            bool isFirst = true;
-
-            foreach (var orderString in orderListValues)
+            if (!string.IsNullOrEmpty(content))
             {
-                string[] orderByParts = orderString.Split(' ');
+                string[] orderListValues = content.Split(',');
+                bool isFirst = true;
 
-                object sortTypeTest = null;
-                SortType sortType = SortType.Asc;
-                if (Enum.TryParse(typeof(SortType), orderByParts[1], out sortTypeTest))
+                foreach (var orderString in orderListValues)
                 {
-                    sortType = (SortType)sortTypeTest;
+                    string[] orderByParts = orderString.Split(' ');
+
+                    object sortTypeTest = null;
+                    SortType sortType = SortType.Asc;
+                    if (Enum.TryParse(typeof(SortType), orderByParts[1], true, out sortTypeTest))
+                    {
+                        sortType = (SortType)sortTypeTest;
+                    }
+
+                    yield return new OrderByInfo()
+                    {
+                        PropertyName = orderByParts[0].Trim(),
+                        Direction = sortType,
+                        First = isFirst
+                    };
+
+                    isFirst = false;
                 }
-
-                yield return new OrderByInfo()
-                {
-                    PropertyName = orderByParts[0].Trim(),
-                    Direction = sortType,
-                    First = isFirst
-                };
-
-                isFirst = false;
             }
         }
         #endregion

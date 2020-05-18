@@ -38,19 +38,11 @@ namespace Arround.Architectures.Web.UI.Controllers
             return this.View();
         }
 
-        public IActionResult Index(string amount)
+        public IActionResult Index([FromQuery] string sort)
         {
-            var orderByList = new List<Expression<Func<Order, object>>>()
-            {
-                x => x.Amount,
-                x => x.Id
-            };
-            SortItem<Order> sortItem = new SortItem<Order>()
-            {
-                OrderBys = orderByList.ToArray()
-            };
-
-            var viewModel = this._orderPresentation.GetList(new OrderListFilter(0), new Pagination() { PageNumber = 1, PageSize = 2 }, sortItem);
+            var viewModel = this._orderPresentation.GetList(new OrderListFilter(0), 
+                                                            new Pagination() { PageNumber = 1, PageSize = 2 },
+                                                            sort);
 
             return this.View(viewModel);
         }

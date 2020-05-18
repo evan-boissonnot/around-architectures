@@ -44,7 +44,7 @@ namespace Boissonnot.Framework.Core.Collections.Data
 
             foreach (string prop in props)
             {
-                PropertyInfo propertyInfo = type.GetProperty(prop);
+                PropertyInfo propertyInfo = type.GetProperties().First(item => item.Name.ToLower() == prop);
                 expr = Expression.Property(expr, propertyInfo);
                 type = propertyInfo.PropertyType;
             }
