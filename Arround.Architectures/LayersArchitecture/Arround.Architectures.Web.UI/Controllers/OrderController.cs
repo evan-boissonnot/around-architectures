@@ -25,12 +25,12 @@ namespace Arround.Architectures.Web.UI.Controllers
         public IActionResult Create(Order order)
         {
             this._orderBusiness.SaveOne(order);
-            return View();
+            return this.View();
         }
 
         public IActionResult Create()
         {
-            return View();
+            return this.View();
         }
 
         public IActionResult Index()
@@ -39,7 +39,7 @@ namespace Arround.Architectures.Web.UI.Controllers
 
             viewModel.Items = this._orderBusiness.GetList(new OrderListFilter(0));
 
-            return View(viewModel);
+            return this.View(viewModel);
         }
     }
 }
