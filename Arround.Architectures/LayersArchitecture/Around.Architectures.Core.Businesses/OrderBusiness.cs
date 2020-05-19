@@ -3,6 +3,7 @@ using Around.Architectures.Core.Interfaces.Data;
 using Around.Architectures.Core.Interfaces.Data.Dals;
 using Around.Architectures.Core.Models;
 using Boissonnot.Framework.Core.Collections.Data.Interfaces;
+using Boissonnot.Framework.Core.Collections.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +20,9 @@ namespace Around.Architectures.Core.Businesses
             this._layer = layer;
         }
 
-        public IQueryable<Order> GetList(IFilter<Order> filter)
+        public IQueryable<Order> GetList(IGenericQuery<Order> query)
         {
-            return this._layer.GetList(filter);
+            return this._layer.GetList(query);
         }
 
         public void SaveOne(Order item)

@@ -5,6 +5,8 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Boissonnot.Framework.Core.Collections.Data.Interfaces;
+using Boissonnot.Framework.Core.Collections.Interfaces;
+using Boissonnot.Framework.Core.Collections.Data;
 
 namespace Around.Architectures.Core.Dals
 {
@@ -23,9 +25,25 @@ namespace Around.Architectures.Core.Dals
             this._context.SaveChanges();
         }
 
-        public IQueryable<Order> GetList(IFilter<Order> filter)
+        public IQueryable<Order> GetList(IGenericQuery<Order> queryParam)
         {
-            return this._context.Orders.Where(filter.Query());
+            IQueryable<Order> query = this._context.Orders.Where(queryParam.Filters.Query());
+
+            IGenericSorter<Order> sort = null;
+
+            // TODO: create a fabric
+            if (queryParam.SortItem != null)
+            {
+                sort = new GenericSorter<Order>(query, queryParam.SortItem.OrderBys);
+            }
+            else
+            {
+                sort = new StringGenericSorter<Order>(query, queryParam.SortQuery);
+            }
+
+            query = sort.Sort();
+
+            return query;
         }
     }
 }

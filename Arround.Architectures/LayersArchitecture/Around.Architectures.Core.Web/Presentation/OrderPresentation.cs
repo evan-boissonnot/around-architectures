@@ -4,8 +4,10 @@ using Around.Architectures.Core.Interfaces.UI.Presentations;
 using Around.Architectures.Core.Interfaces.UI.ViewModels;
 using Around.Architectures.Core.Models;
 using Around.Architectures.Core.Web.ViewModels;
+using Boissonnot.Framework.Core.Collections;
 using Boissonnot.Framework.Core.Collections.Data;
 using Boissonnot.Framework.Core.Collections.Data.Interfaces;
+using Boissonnot.Framework.Core.Collections.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,19 +32,23 @@ namespace Around.Architectures.Core.Web.Presentation
         #region Public methods
         public IListViewModel<Order> GetList(IFilter<Order> filters, Pagination pagination, SortItem<Order> sortItem)
         {
-            var list = this._business.GetList(filters);
-            var sort = new GenericSorter<Order>(list.AsQueryable(), sortItem.OrderBys);
-            var query = sort.Sort();
+            IGenericQuery<Order> genericQuery = new GenericQuery<Order>(filters, sortItem);
 
-            var pageList = query.ToPagedList(pagination);
-
-            return new OrderListViewModel(pageList.ToList());
+            return this.GetList(genericQuery, pagination);
         }
 
         public IListViewModel<Order> GetList(IFilter<Order> filters, Pagination pagination, string orderQuery)
         {
-            var list = this._business.GetList(filters);
-            list = list.OrderBy(orderQuery);
+            IGenericQuery<Order> genericQuery = new GenericQuery<Order>(filters, orderQuery);
+
+            return this.GetList(genericQuery, pagination);
+        }
+        #endregion
+
+        #region Internal methods
+        public IListViewModel<Order> GetList(IGenericQuery<Order> genericQuery, Pagination pagination)
+        {
+            var list = this._business.GetList(genericQuery);
 
             var pageList = list.ToPagedList(pagination);
 

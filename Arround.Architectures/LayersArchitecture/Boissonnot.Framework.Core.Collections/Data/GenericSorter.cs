@@ -11,7 +11,7 @@ namespace Boissonnot.Framework.Core.Collections.Data
     /// Allows you to sort all collections you want
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class GenericSorter<T>
+    public class GenericSorter<T> : IGenericSorter<T>
     {
         #region Fields
         private Expression<Func<T, object>>[] _orderBys;
@@ -23,9 +23,8 @@ namespace Boissonnot.Framework.Core.Collections.Data
             this.Source = source;
         }
 
-        public GenericSorter(IQueryable<T> source, params Expression<Func<T, object>>[] orderBys)
+        public GenericSorter(IQueryable<T> source, params Expression<Func<T, object>>[] orderBys) : this(source)
         {
-            this.Source = source;
             this._orderBys = orderBys;
         }
         #endregion
@@ -42,7 +41,7 @@ namespace Boissonnot.Framework.Core.Collections.Data
                 bool isAlreadyOrdered = this.IsAlreadyOrder;
                 foreach (var sort in this._orderBys)
                 {
-                    if (! isAlreadyOrdered)
+                    if (!isAlreadyOrdered)
                     {
                         query = this.Source.OrderBy(sort);
                         isAlreadyOrdered = true;

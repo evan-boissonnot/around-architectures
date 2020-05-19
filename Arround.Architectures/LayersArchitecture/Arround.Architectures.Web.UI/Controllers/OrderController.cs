@@ -40,11 +40,12 @@ namespace Arround.Architectures.Web.UI.Controllers
 
         public IActionResult Index([FromQuery] string sort)
         {
-            var viewModel = this._orderPresentation.GetList(new OrderListFilter(0), 
+
+            var viewModel = this._orderPresentation.GetList(new OrderListFilter(0),
                                                             new Pagination() { PageNumber = 1, PageSize = 2 },
                                                             sort);
 
-            return this.View(viewModel);
+            return this.View(null);
         }
     }
 }
