@@ -1,5 +1,6 @@
 ﻿using Around.Architectures.Core.Filters;
 using Around.Architectures.Core.Interfaces.Businesses;
+using Around.Architectures.Core.Interfaces.Data.Businesses;
 using Around.Architectures.Core.Interfaces.UI.Presentations;
 using Around.Architectures.Core.Interfaces.UI.ViewModels;
 using Around.Architectures.Core.Models;
@@ -16,43 +17,15 @@ using System.Text;
 
 namespace Around.Architectures.Core.Web.Presentation
 {
-    public class OrderPresentation : IPresentation<Order>
+    public class OrderPresentation : BasePresentation<Order>
     {
         #region Fields
         private IOrderBusiness _business = null;
         #endregion
 
         #region Constructors
-        public OrderPresentation(IOrderBusiness business)
+        public OrderPresentation(IBusinessOf<Order> business) : base(business)
         {
-            this._business = business;
-        }
-        #endregion
-
-        #region Public methods
-        public IListViewModel<Order> GetList(IFilter<Order> filters, Pagination pagination, SortItem<Order> sortItem)
-        {
-            IGenericQuery<Order> genericQuery = new GenericQuery<Order>(filters, sortItem);
-
-            return this.GetList(genericQuery, pagination);
-        }
-
-        public IListViewModel<Order> GetList(IFilter<Order> filters, Pagination pagination, string orderQuery)
-        {
-            IGenericQuery<Order> genericQuery = new GenericQuery<Order>(filters, orderQuery);
-
-            return this.GetList(genericQuery, pagination);
-        }
-        #endregion
-
-        #region Internal methods
-        public IListViewModel<Order> GetList(IGenericQuery<Order> genericQuery, Pagination pagination)
-        {
-            var list = this._business.GetList(genericQuery);
-
-            var pageList = list.ToPagedList(pagination);
-
-            return new OrderListViewModel(pageList.ToList());
         }
         #endregion
     }

@@ -45,7 +45,7 @@ namespace Arround.Architectures.Web.UI.Controllers
                                                             new Pagination() { PageNumber = 1, PageSize = 2 },
                                                             sort);
 
-            return this.View(null);
+            return this.View(viewModel);
         }
     }
 }
