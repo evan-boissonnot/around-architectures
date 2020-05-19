@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Boissonnot.Framework.Core.Collections.Data.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 

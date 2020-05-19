@@ -1,11 +1,11 @@
 ﻿using Around.Architectures.Core.Filters;
 using Around.Architectures.Core.Interfaces.Businesses;
-using Around.Architectures.Core.Interfaces.Filters;
 using Around.Architectures.Core.Interfaces.UI.Presentations;
 using Around.Architectures.Core.Interfaces.UI.ViewModels;
 using Around.Architectures.Core.Models;
 using Around.Architectures.Core.Web.ViewModels;
 using Boissonnot.Framework.Core.Collections.Data;
+using Boissonnot.Framework.Core.Collections.Data.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

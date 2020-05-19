@@ -1,8 +1,8 @@
 ﻿using Around.Architectures.Core.Interfaces.Businesses;
 using Around.Architectures.Core.Interfaces.Data;
 using Around.Architectures.Core.Interfaces.Data.Dals;
-using Around.Architectures.Core.Interfaces.Filters;
 using Around.Architectures.Core.Models;
+using Boissonnot.Framework.Core.Collections.Data.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

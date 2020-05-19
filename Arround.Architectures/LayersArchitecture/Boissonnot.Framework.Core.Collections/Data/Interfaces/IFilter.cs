@@ -1,9 +1,8 @@
-﻿using Around.Architectures.Core.Interfaces.Data.Queries;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Around.Architectures.Core.Interfaces.Filters
+namespace Boissonnot.Framework.Core.Collections.Data.Interfaces
 {
     public interface IFilter<T> : IQuery<T> where T: class
     {

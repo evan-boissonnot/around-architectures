@@ -1,7 +1,7 @@
-﻿using Around.Architectures.Core.Interfaces.Filters;
-using Around.Architectures.Core.Interfaces.Models;
+﻿using Around.Architectures.Core.Interfaces.Models;
 using Around.Architectures.Core.Interfaces.UI.ViewModels;
 using Boissonnot.Framework.Core.Collections.Data;
+using Boissonnot.Framework.Core.Collections.Data.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;

@@ -1,10 +1,10 @@
 ﻿using Around.Architectures.Core.Data;
 using Around.Architectures.Core.Interfaces.Data.Dals;
-using Around.Architectures.Core.Interfaces.Filters;
 using Around.Architectures.Core.Models;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using Boissonnot.Framework.Core.Collections.Data.Interfaces;
 
 namespace Around.Architectures.Core.Dals
 {

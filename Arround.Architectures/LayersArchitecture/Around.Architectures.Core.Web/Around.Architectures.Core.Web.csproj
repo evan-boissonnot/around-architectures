@@ -17,4 +17,8 @@
     <ProjectReference Include="..\Boissonnot.Framework.Core.Collections\Boissonnot.Framework.Core.Collections.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
