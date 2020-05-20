@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Around.Architectures.Core.Businesses.TransactionScripts;
 using Around.Architectures.Core.Filters;
 using Around.Architectures.Core.Interfaces.Businesses;
+using Around.Architectures.Core.Interfaces.UI.Presentations;
 using Around.Architectures.Core.Models;
 using Around.Architectures.Core.Web.Controllers;
 using Around.Architectures.Core.Web.Presentation;
@@ -19,10 +20,10 @@ namespace Arround.Architectures.Web.UI.Controllers
     public class OrderController : BaseController<Order>
     {
         #region Fields
-        private OrderPresentation _orderPresentation = null;
+        private IPresentation<Order> _orderPresentation = null;
         #endregion
 
-        public OrderController(OrderPresentation orderPresentation)
+        public OrderController(IPresentation<Order> orderPresentation)
         {
             this._orderPresentation = orderPresentation;
         }
@@ -40,7 +41,6 @@ namespace Arround.Architectures.Web.UI.Controllers
 
         public IActionResult Index([FromQuery] string sort)
         {
-
             var viewModel = this._orderPresentation.GetList(new OrderListFilter(0),
                                                             new Pagination() { PageNumber = 1, PageSize = 2 },
                                                             sort);

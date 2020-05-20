@@ -19,10 +19,6 @@ namespace Around.Architectures.Core.Web.Presentation
 {
     public class OrderPresentation : BasePresentation<Order>
     {
-        #region Fields
-        private IOrderBusiness _business = null;
-        #endregion
-
         #region Constructors
         public OrderPresentation(IBusinessOf<Order> business) : base(business)
         {

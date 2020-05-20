@@ -9,6 +9,9 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Around.Architectures.Core.Web.Presentation;
+using Around.Architectures.Core.Interfaces.Data.Businesses;
+using Around.Architectures.Core.Models;
+using Around.Architectures.Core.Interfaces.UI.Presentations;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -24,8 +27,8 @@ namespace Microsoft.Extensions.DependencyInjection
             });
 
             services.AddScoped<IOrderDataLayer, OrderDal>();
-            services.AddScoped<IOrderBusiness, OrderBusiness>();
-            services.AddScoped<OrderPresentation, OrderPresentation>();
+            services.AddScoped<IBusinessOf<Order>, OrderBusiness>();
+            services.AddScoped<IPresentation<Order>, OrderPresentation>();
 
             return services;
         }
